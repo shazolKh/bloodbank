@@ -1,0 +1,88 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}<title>{{ request.user.first_name }} | Settings</title>{% endblock %}
+
+{% block content %}
+<section class="post-area section-gap">
+    <div class="container">
+        <div class="row justify-content-center d-flex">
+            <div class="col-lg-4 sidebar">
+                <div class="single-slidebar">
+                    <figure>
+                        <a href="#" class="employer-dashboard-thumb"><img src="{% static 'img/candidate-dashboard.jpg' %}" alt=""></a>
+                        <figcaption>
+                            <h2>{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-lg-8 post-list">
+                    <div class="profile_job_content col-lg-12">
+                    <div class="headline">
+                        <h3> Basic Information</h3>
+                    </div>
+                    <div class="profile_job_detail">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Age</h5>
+                                    <label class="form-control" >{{ profile.age }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Blood Group</h5>
+                                    <label class="form-control" >{{ profile.blood }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Weight</h5>
+                                    <label class="form-control" >{{ profile.weight }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Gender</h5>
+                                    <label class="form-control" >{{ profile.gender }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Mobile</h5>
+                                    <label class="form-control" >{{ profile.mobile }}</label>
+                                </div>
+                            </div>
+                            {% if profile.mobile2 is not Null %}
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="submit-field">
+                                        <h5>Secondary Mobile</h5>
+                                        <label class="form-control" >{{ profile.mobile2 }}</label>
+                                    </div>
+                                </div>
+                            {% endif %}
+                             <div class="col-md-12 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Address</h5>
+                                    <label class="form-control" id="exampleFormControlTextarea1">{{ profile.address }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Any Disease?</h5>
+                                    <label class="form-control" id="exampleFormControlTextarea1">{{ profile.disease }}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                        <div class="add_job_btn col-lg-12 mt-5">
+                        <div class="submit-field">
+                            <button class="job_detail_btn">Edit Profile</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

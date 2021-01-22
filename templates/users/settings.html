@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}<title>{{ request.user.first_name }} | Settings</title>{% endblock %}
+
+{% block content %}
+<section class="post-area section-gap">
+    <div class="container">
+        <div class="row justify-content-center d-flex">
+            <div class="col-lg-4 sidebar">
+                <div class="single-slidebar">
+                    <figure>
+                        <a href="#" class="employer-dashboard-thumb"><img src="{% static 'img/candidate-dashboard.jpg' %}" alt=""></a>
+                        <figcaption>
+                            <div class="careerfy-fileUpload">
+                                <span class="clr_b"><i class="fa fa-plus careerfy-add"></i> Upload Photo</span>
+                                <input type="file" class="careerfy-upload">
+                            </div>
+                            <h2>{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-lg-8 post-list">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="profile_job_content col-lg-12">
+                    <div class="headline">
+                        <h3> Basic Information</h3>
+                    </div>
+                    <div class="profile_job_detail">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Age *</h5>
+                                    <input class="form-control" name="age" type="text" placeholder="Your Age" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Blood Group *</h5>
+                                    <input class="form-control" name="blood" type="email" placeholder="Blood Group" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Weight *</h5>
+                                    <input class="form-control" type="text" name="weight" placeholder="Weight (Kg)" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Gender *</h5>
+                                    <input class="form-control" name="gender" type="tel" placeholder="Male/Female/Other" required>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Mobile *</h5>
+                                    <input class="form-control" name="mobile" type="tel" placeholder="123456789" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Secondary Mobile</h5>
+                                    <input class="form-control" name="mobile2" type="tel" placeholder="123456789">
+                                </div>
+                            </div>
+                             <div class="col-md-12 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Address *</h5>
+                                    <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="5" placeholder="Your Address" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Any Disease?</h5>
+                                    <textarea class="form-control" name="dis" id="exampleFormControlTextarea1" rows="5" placeholder="Have you any Disease? Describe Shortly" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                        <div class="add_job_btn col-lg-12 mt-5">
+                        <div class="submit-field">
+                            <button type="submit" class="job_detail_btn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
