@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 
-from .forms import RegForm
+from .forms import RegForm, UserProfileForm
 from .models import UserProfile
 
 
@@ -78,8 +78,8 @@ def userProfile(request, username):
 
 
 @login_required(login_url='login')
-def userSettings(request, id):
-    profile_info = UserProfile.objects.get(user=id)
+def userSettings(request, pk):
+    profile_info = UserProfile.objects.get(user=pk)
 
     context = {
         'profile': profile_info
@@ -88,8 +88,25 @@ def userSettings(request, id):
 
 
 @login_required(login_url='login')
-def editProfile(request, id):
-    profile_info = UserProfile.objects.get(user=id)
+def editProfile(request, pk):
+    profile_info = UserProfile.objects.get(user=pk)
+
+    if request.method == 'POST':
+        age = request.POST.get('age')
+        blood = request.POST.get('blood')
+        gender = request.POST.get('gender')
+        weight = request.POST.get('weight')
+        mobile = request.POST.get('mobile')
+        mobile2 = request.POST.get('mobile2')
+        address = request.POST.get('address')
+        disease = request.POST.get('dis')
+
+        UserProfile.objects.filter(user_id=pk).update(age=age, blood_group=blood, gender=gender, mobile=mobile,
+                                                      mobile2=mobile2, address=address, disease=disease, weight=weight)
+        messages.success(request, 'Your Information are Updated')
+
+        # print([age, blood, gender, weight, mobile, mobile2, address, disease, pk])
+        return redirect('settings', request.user.id)
 
     context = {
         'profile': profile_info

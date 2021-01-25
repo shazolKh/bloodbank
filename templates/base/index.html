@@ -2,603 +2,630 @@
 {% load static %}
 {% block title %}<title>Blood Bank</title>{% endblock %}
 {% block content %}
-    <!-- Paradise Slider -->
     <div id="js_frm_031" class="carousel slide ps_control_xlongicon swipe_x ps_easeOutInCubic" data-ride="carousel" data-pause="hover" data-interval="4000" data-duration="2000">
-
-                    <!-- Wrapper For Slides -->
-                    <div class="carousel-inner" role="listbox">
-
-                        <!-- First Slide -->
-                        <div class="carousel-item active">
-
-                            <!-- Slide Background -->
-                            <img src="{% static 'img/slider1.jpeg' %}" alt="slider_img" />
-
-                            <!-- Form -->
-                            <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
-                                <h3 data-animation="animated fadeInLeft">signup</h3>
-                                <form action="#">
-                                    <div class="form-group" data-animation="animated fadeInRight">
-                                        <input type="text" class="form-control" placeholder="first name" required>
-                                    </div>
-                                    <div class="form-group" data-animation="animated fadeInLeft">
-                                        <input type="text" class="form-control" placeholder="last name" required>
-                                    </div>
-                                    <div class="form-group" data-animation="animated fadeInLeft">
-                                        <input type="password" class="form-control" placeholder="password" required>
-                                    </div>
-                                    <div class="form-group" data-animation="animated fadeInRight">
-                                        <input type="email" class="form-control" placeholder="email" required>
-                                    </div>
-                                    <div class="checkbox" data-animation="animated fadeInLeft">
-                                        <div>
-                                            <input type="checkbox" value="" required>
-                                            <span></span>
-                                        </div>
-                                        <label>I agree to the <a href="#" >terms and conditions</a></label>
-                                    </div>
-                                    <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
-                                        create account
-                                    </button>
-                                </form>
-                            </div>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="{% static 'img/slider1.jpeg' %}" alt="slider_img" />
+                {% if request.user.is_authenticated %}
+                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
+                        <h3 data-animation="animated fadeInLeft">Blood For Life</h3>
+                        <div class="form-group" data-animation="animated fadeInRight">
+                            <label class="form-control">This is our Community</label>
                         </div>
-                        <!-- End of Slide -->
-
-                        <!-- Second Slide -->
-                        <div class="carousel-item">
-
-                            <!-- Slide Background -->
-                            <img src="{% static 'img/slider_3.jpg' %}" alt="slider_img" />
-
-                            <!-- Form -->
-                            <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
-                                <h3 data-animation="animated fadeInLeft">signup</h3>
-                                <form action="#">
-                                    <div class="form-group" data-animation="animated fadeInRight">
-                                        <input type="text" class="form-control" placeholder="first name" required>
-                                    </div>
-                                    <div class="form-group" data-animation="animated fadeInLeft">
-                                        <input type="text" class="form-control" placeholder="last name" required>
-                                    </div>
-                                    <div class="form-group" data-animation="animated fadeInLeft">
-                                        <input type="password" class="form-control" placeholder="password" required>
-                                    </div>
-                                    <div class="form-group" data-animation="animated fadeInRight">
-                                        <input type="email" class="form-control" placeholder="email" required>
-                                    </div>
-                                    <div class="checkbox" data-animation="animated fadeInLeft">
-                                        <div>
-                                            <input type="checkbox" value="" required>
-                                            <span></span>
-                                        </div>
-                                        <label>I agree to the <a href="#" >terms and conditions</a></label>
-                                    </div>
-                                    <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
-                                        create account
-                                    </button>
-                                </form>
-                            </div>
+                        <div class="form-group" data-animation="animated fadeInLeft">
+                            <label class="form-control">This is our Community Second</label>
                         </div>
-                        <!-- End of Slide -->
-
-                        <!-- Third Slide -->
-                        <div class="carousel-item">
-
-                            <!-- Slide Background -->
-                            <img src="{% static 'img/slider2.jpeg' %}" alt="slider_img" />
-
-                            <!-- Form -->
-                            <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
-                                <h3 data-animation="animated fadeInLeft">signup</h3>
-                                <form action="#">
-                                    <div class="form-group" data-animation="animated fadeInRight">
-                                        <input type="text" class="form-control" placeholder="first name" required>
-                                    </div>
-                                    <div class="form-group" data-animation="animated fadeInLeft">
-                                        <input type="text" class="form-control" placeholder="last name" required>
-                                    </div>
-                                    <div class="form-group" data-animation="animated fadeInLeft">
-                                        <input type="password" class="form-control" placeholder="password" required>
-                                    </div>
-                                    <div class="form-group" data-animation="animated fadeInRight">
-                                        <input type="email" class="form-control" placeholder="email" required>
-                                    </div>
-                                    <div class="checkbox" data-animation="animated fadeInLeft">
-                                        <div>
-                                            <input type="checkbox" value="" required>
-                                            <span></span>
-                                        </div>
-                                        <label>I agree to the <a href="#" >terms and conditions</a></label>
-                                    </div>
-                                    <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
-                                        create account
-                                    </button>
-                                </form>
-                            </div>
+                        <div class="form-group" data-animation="animated fadeInLeft">
+                            <label class="form-control">This is our Community thoaihwdl</label>
                         </div>
-                        <!-- End of Slide -->
-
-                    </div><!-- End of Wrapper For Slides -->
-
-                    <!-- Left Control -->
-                    <a class="carousel-control-prev" href="#js_frm_031" role="button" data-slide="prev">
-                        <span class="fa fa-long-arrow-left" aria-hidden="true"></span>
-                    </a>
-
-                    <!-- Right Control -->
-                    <a class="carousel-control-next" href="#js_frm_031" role="button" data-slide="next">
-                        <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
-                    </a>
-
-                </div>
+                        <div class="form-group" data-animation="animated fadeInRight">
+                            <label class="form-control">This is our Community thoaihwdl</label>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
+                        <h3 data-animation="animated fadeInLeft">signup</h3>
+                        <form action="#">
+                            <div class="form-group" data-animation="animated fadeInRight">
+                                <input type="text" class="form-control" placeholder="first name" required>
+                            </div>
+                            <div class="form-group" data-animation="animated fadeInLeft">
+                                <input type="text" class="form-control" placeholder="last name" required>
+                            </div>
+                            <div class="form-group" data-animation="animated fadeInLeft">
+                                <input type="password" class="form-control" placeholder="password" required>
+                            </div>
+                            <div class="form-group" data-animation="animated fadeInRight">
+                                <input type="email" class="form-control" placeholder="email" required>
+                            </div>
+                            <div class="checkbox" data-animation="animated fadeInLeft">
+                                <div>
+                                    <input type="checkbox" value="" required>
+                                    <span></span>
+                                </div>
+                                <label>I agree to the <a href="#" >terms and conditions</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
+                                create account
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="carousel-item">
+                <!-- Slide Background -->
+                <img src="{% static 'img/slider_3.jpg' %}" alt="slider_img" />
+                <!-- Form -->
+                {% if request.user.is_authenticated %}
+                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
+                        <h3 data-animation="animated fadeInLeft">Blood For Life</h3>
+                        <div class="form-group" data-animation="animated fadeInRight">
+                            <label class="form-control">This is our Community</label>
+                        </div>
+                        <div class="form-group" data-animation="animated fadeInLeft">
+                            <label class="form-control">This is our Community Second</label>
+                        </div>
+                        <div class="form-group" data-animation="animated fadeInLeft">
+                            <label class="form-control">This is our Community thoaihwdl</label>
+                        </div>
+                        <div class="form-group" data-animation="animated fadeInRight">
+                            <label class="form-control">This is our Community thoaihwdl</label>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
+                        <h3 data-animation="animated fadeInLeft">signup</h3>
+                        <form action="#">
+                            <div class="form-group" data-animation="animated fadeInRight">
+                                <input type="text" class="form-control" placeholder="first name" required>
+                            </div>
+                            <div class="form-group" data-animation="animated fadeInLeft">
+                                <input type="text" class="form-control" placeholder="last name" required>
+                            </div>
+                            <div class="form-group" data-animation="animated fadeInLeft">
+                                <input type="password" class="form-control" placeholder="password" required>
+                            </div>
+                            <div class="form-group" data-animation="animated fadeInRight">
+                                <input type="email" class="form-control" placeholder="email" required>
+                            </div>
+                            <div class="checkbox" data-animation="animated fadeInLeft">
+                                <div>
+                                    <input type="checkbox" value="" required>
+                                    <span></span>
+                                </div>
+                                <label>I agree to the <a href="#" >terms and conditions</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
+                                create account
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+            <!-- End of Slide -->
+            <!-- Third Slide -->
+            <div class="carousel-item">
+                <!-- Slide Background -->
+                <img src="{% static 'img/slider2.jpeg' %}" alt="slider_img" />
+                <!-- Form -->
+                {% if request.user.is_authenticated %}
+                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
+                        <h3 data-animation="animated fadeInLeft">Blood For Life</h3>
+                        <div class="form-group" data-animation="animated fadeInRight">
+                            <label class="form-control">This is our Community</label>
+                        </div>
+                        <div class="form-group" data-animation="animated fadeInLeft">
+                            <label class="form-control">This is our Community Second</label>
+                        </div>
+                        <div class="form-group" data-animation="animated fadeInLeft">
+                            <label class="form-control">This is our Community thoaihwdl</label>
+                        </div>
+                        <div class="form-group" data-animation="animated fadeInRight">
+                            <label class="form-control">This is our Community thoaihwdl</label>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
+                        <h3 data-animation="animated fadeInLeft">signup</h3>
+                        <form action="#">
+                            <div class="form-group" data-animation="animated fadeInRight">
+                                <input type="text" class="form-control" placeholder="first name" required>
+                            </div>
+                            <div class="form-group" data-animation="animated fadeInLeft">
+                                <input type="text" class="form-control" placeholder="last name" required>
+                            </div>
+                            <div class="form-group" data-animation="animated fadeInLeft">
+                                <input type="password" class="form-control" placeholder="password" required>
+                            </div>
+                            <div class="form-group" data-animation="animated fadeInRight">
+                                <input type="email" class="form-control" placeholder="email" required>
+                            </div>
+                            <div class="checkbox" data-animation="animated fadeInLeft">
+                                <div>
+                                    <input type="checkbox" value="" required>
+                                    <span></span>
+                                </div>
+                                <label>I agree to the <a href="#" >terms and conditions</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
+                                create account
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+            <!-- End of Slide -->
+        </div>
+        <!-- End of Wrapper For Slides -->
+        <!-- Left Control -->
+        <a class="carousel-control-prev" href="#js_frm_031" role="button" data-slide="prev">
+            <span class="fa fa-long-arrow-left" aria-hidden="true"></span>
+        </a>
+        <!-- Right Control -->
+        <a class="carousel-control-next" href="#js_frm_031" role="button" data-slide="next">
+            <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+        </a>
+    </div>
     <!-- End Paradise Slider -->
 
     <!-- Start feature-cat Area -->
     <section class="feature-cat-area section-full" id="category">
-                    <div class="container">
-                        <div class="row d-flex justify-content-center">
-                            <div class="menu-content pb-60 col-lg-10">
-                                <div class="title text-center">
-                                    <h1 class="mb-10">Featured Job Categories</h1>
-                                    <p>Who are in extremely love with eco friendly system.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <div class="single-fcat">
-                                    <a href="category.html">
-                                        <img src="{% static 'img/o1.png' %}" alt="">
-                                    </a>
-                                    <p>Accounting</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <div class="single-fcat">
-                                    <a href="category.html">
-                                        <img src="{% static 'img/o2.png' %}" alt="">
-                                    </a>
-                                    <p>Development</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <div class="single-fcat">
-                                    <a href="category.html">
-                                        <img src="{% static 'img/o3.png' %}" alt="">
-                                    </a>
-                                    <p>Technology</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <div class="single-fcat">
-                                    <a href="category.html">
-                                        <img src="{% static 'img/o4.png' %}" alt="">
-                                    </a>
-                                    <p>Media & News</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <div class="single-fcat">
-                                    <a href="category.html">
-                                        <img src="{% static 'img/o5.png' %}" alt="">
-                                    </a>
-                                    <p>Medical</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6">
-                                <div class="single-fcat">
-                                    <a href="category.html">
-                                        <img src="{% static 'img/o6.png' %}" alt="">
-                                    </a>
-                                    <p>Goverment</p>
-                                </div>
-                            </div>
-                        </div>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-60 col-lg-10">
+                    <div class="title text-center">
+                        <h1 class="mb-10">Featured Job Categories</h1>
+                        <p>Who are in extremely love with eco friendly system.</p>
                     </div>
-                </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-fcat">
+                        <a href="category.html">
+                            <img src="{% static 'img/o1.png' %}" alt="">
+                        </a>
+                        <p>Accounting</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-fcat">
+                        <a href="category.html">
+                            <img src="{% static 'img/o2.png' %}" alt="">
+                        </a>
+                        <p>Development</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-fcat">
+                        <a href="category.html">
+                            <img src="{% static 'img/o3.png' %}" alt="">
+                        </a>
+                        <p>Technology</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-fcat">
+                        <a href="category.html">
+                            <img src="{% static 'img/o4.png' %}" alt="">
+                        </a>
+                        <p>Media & News</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-fcat">
+                        <a href="category.html">
+                            <img src="{% static 'img/o5.png' %}" alt="">
+                        </a>
+                        <p>Medical</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-fcat">
+                        <a href="category.html">
+                            <img src="{% static 'img/o6.png' %}" alt="">
+                        </a>
+                        <p>Goverment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- End feature-cat Area -->
 
     <!-- Start post Area -->
     <section class="post-area section-full bg-gray">
-                    <div class="container">
-                        <div class="row d-flex justify-content-center">
-                            <div class="menu-content pb-60 col-lg-10">
-                                <div class="title text-center">
-                                    <h1 class="mb-10">Jobs Available</h1>
-                                    <p>Who are in extremely love with eco friendly system.</p>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-60 col-lg-10">
+                    <div class="title text-center">
+                        <h1 class="mb-10">Jobs Available</h1>
+                        <p>Who are in extremely love with eco friendly system.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center d-flex">
+                <div class="col-lg-8 post-list">
+                    <ul class="cat-list">
+                        <li><a href="#">Recent</a></li>
+                        <li><a href="#">Full Time</a></li>
+                        <li><a href="#">Intern</a></li>
+                        <li><a href="#">part Time</a></li>
+                    </ul>
+                    <div class="single-post d-flex flex-row">
+                        <div class="thumb">
+                            <img src="{% static 'img/o1.png' %}" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title d-flex flex-row justify-content-between">
+                                <div class="titles">
+                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                    <h6>Premium Labels Limited</h6>
                                 </div>
+                            </div>
+                            <div class="job-listing-footer">
+                                <ul>
+                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
+                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
+                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
+                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
+                                </ul>									</div>
+                        </div>
+                        <div class="job-listing-btns">
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-post d-flex flex-row">
+                        <div class="thumb">
+                            <img src="{% static 'img/o1.png' %}" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title d-flex flex-row justify-content-between">
+                                <div class="titles">
+                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                    <h6>Premium Labels Limited</h6>
+                                </div>
+                            </div>
+                            <div class="job-listing-footer">
+                                <ul>
+                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
+                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
+                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
+                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="row justify-content-center d-flex">
-                            <div class="col-lg-8 post-list">
-                                <ul class="cat-list">
-                                    <li><a href="#">Recent</a></li>
-                                    <li><a href="#">Full Time</a></li>
-                                    <li><a href="#">Intern</a></li>
-                                    <li><a href="#">part Time</a></li>
-                                </ul>
-                                <div class="single-post d-flex flex-row">
-                                    <div class="thumb">
-                                        <img src="{% static 'img/o1.png' %}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title d-flex flex-row justify-content-between">
-                                            <div class="titles">
-                                                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                                <h6>Premium Labels Limited</h6>
-                                            </div>
-
-                                        </div>
-                                        <div class="job-listing-footer">
-                                            <ul>
-                                                <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                                <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                                <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                                <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                            </ul>									</div>
-                                    </div>
-                                    <div class="job-listing-btns">
-                                        <ul class="btns">
-                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="#">Apply</a></li>
-                                        </ul>
-                                    </div>
+                        <div class="job-listing-btns">
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-post d-flex flex-row">
+                        <div class="thumb">
+                            <img src="{% static 'img/o1.png' %}" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title d-flex flex-row justify-content-between">
+                                <div class="titles">
+                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                    <h6>Premium Labels Limited</h6>
                                 </div>
-                                <div class="single-post d-flex flex-row">
-                                    <div class="thumb">
-                                        <img src="{% static 'img/o1.png' %}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title d-flex flex-row justify-content-between">
-                                            <div class="titles">
-                                                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                                <h6>Premium Labels Limited</h6>
-                                            </div>
-
-                                        </div>
-                                        <div class="job-listing-footer">
-                                            <ul>
-                                                <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                                <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                                <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                                <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                            </ul>									</div>
-                                    </div>
-                                    <div class="job-listing-btns">
-                                        <ul class="btns">
-                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="#">Apply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single-post d-flex flex-row">
-                                    <div class="thumb">
-                                        <img src="{% static 'img/o1.png' %}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title d-flex flex-row justify-content-between">
-                                            <div class="titles">
-                                                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                                <h6>Premium Labels Limited</h6>
-                                            </div>
-
-                                        </div>
-                                        <div class="job-listing-footer">
-                                            <ul>
-                                                <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                                <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                                <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                                <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                            </ul>									</div>
-                                    </div>
-                                    <div class="job-listing-btns">
-                                        <ul class="btns">
-                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="#">Apply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single-post d-flex flex-row">
-                                    <div class="thumb">
-                                        <img src="{% static 'img/o1.png' %}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title d-flex flex-row justify-content-between">
-                                            <div class="titles">
-                                                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                                <h6>Premium Labels Limited</h6>
-                                            </div>
-
-                                        </div>
-                                        <div class="job-listing-footer">
-                                            <ul>
-                                                <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                                <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                                <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                                <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                            </ul>									</div>
-                                    </div>
-                                    <div class="job-listing-btns">
-                                        <ul class="btns">
-                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="#">Apply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single-post d-flex flex-row">
-                                    <div class="thumb">
-                                        <img src="{% static 'img/o1.png' %}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title d-flex flex-row justify-content-between">
-                                            <div class="titles">
-                                                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                                <h6>Premium Labels Limited</h6>
-                                            </div>
-
-                                        </div>
-                                        <div class="job-listing-footer">
-                                            <ul>
-                                                <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                                <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                                <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                                <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                            </ul>									</div>
-                                    </div>
-                                    <div class="job-listing-btns">
-                                        <ul class="btns">
-                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="#">Apply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single-post d-flex flex-row">
-                                    <div class="thumb">
-                                        <img src="{% static 'img/o1.png' %}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title d-flex flex-row justify-content-between">
-                                            <div class="titles">
-                                                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                                <h6>Premium Labels Limited</h6>
-                                            </div>
-
-                                        </div>
-                                        <div class="job-listing-footer">
-                                            <ul>
-                                                <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                                <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                                <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                                <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                            </ul>									</div>
-                                    </div>
-                                    <div class="job-listing-btns">
-                                        <ul class="btns">
-                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="#">Apply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single-post d-flex flex-row">
-                                    <div class="thumb">
-                                        <img src="{% static 'img/o1.png' %}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title d-flex flex-row justify-content-between">
-                                            <div class="titles">
-                                                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                                <h6>Premium Labels Limited</h6>
-                                            </div>
-
-                                        </div>
-                                        <div class="job-listing-footer">
-                                            <ul>
-                                                <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                                <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                                <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                                <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                            </ul>									</div>
-                                    </div>
-                                    <div class="job-listing-btns">
-                                        <ul class="btns">
-                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="#">Apply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="single-post d-flex flex-row">
-                                    <div class="thumb">
-                                        <img src="{% static 'img/o1.png' %}" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="title d-flex flex-row justify-content-between">
-                                            <div class="titles">
-                                                <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                                <h6>Premium Labels Limited</h6>
-                                            </div>
-
-                                        </div>
-                                        <div class="job-listing-footer">
-                                            <ul>
-                                                <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                                <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                                <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                                <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                            </ul>									</div>
-                                    </div>
-                                    <div class="job-listing-btns">
-                                        <ul class="btns">
-                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="#">Apply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-
-                                <a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
-
                             </div>
-                            <div class="col-lg-4 sidebar">
-                                <div class="single-slidebar">
-                                    <h4>Jobs by Location</h4>
-                                    <ul class="cat-list">
-                                        <li><a class="justify-content-between d-flex" href="category.html"><p>New York</p><span>37</span></a></li>
-                                        <li><a class="justify-content-between d-flex" href="category.html"><p>Park Montana</p><span>57</span></a></li>
-                                        <li><a class="justify-content-between d-flex" href="category.html"><p>Atlanta</p><span>33</span></a></li>
-                                        <li><a class="justify-content-between d-flex" href="category.html"><p>Arizona</p><span>36</span></a></li>
-                                        <li><a class="justify-content-between d-flex" href="category.html"><p>Florida</p><span>47</span></a></li>
-                                        <li><a class="justify-content-between d-flex" href="category.html"><p>Rocky Beach</p><span>27</span></a></li>
-                                        <li><a class="justify-content-between d-flex" href="category.html"><p>Chicago</p><span>17</span></a></li>
-                                    </ul>
+                            <div class="job-listing-footer">
+                                <ul>
+                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
+                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
+                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
+                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="job-listing-btns">
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-post d-flex flex-row">
+                        <div class="thumb">
+                            <img src="{% static 'img/o1.png' %}" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title d-flex flex-row justify-content-between">
+                                <div class="titles">
+                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                    <h6>Premium Labels Limited</h6>
                                 </div>
-
-                                <div class="single-slidebar">
-                                    <h4>Top rated job posts</h4>
-                                    <div class="active-relatedjob-carusel">
-                                        <div class="single-rated">
-                                            <img class="img-fluid" src="{% static 'img/r1.jpg' %}" alt="">
-                                            <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                            <h6>Premium Labels Limited</h6>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-                                            </p>
-                                            <h5>Job Nature: Full time</h5>
-                                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-                                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-                                            <a href="#" class="btns text-uppercase">Apply job</a>
-                                        </div>
-                                        <div class="single-rated">
-                                            <img class="img-fluid" src="{% static 'img/r1.jpg' %}" alt="">
-                                            <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                            <h6>Premium Labels Limited</h6>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-                                            </p>
-                                            <h5>Job Nature: Full time</h5>
-                                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-                                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-                                            <a href="#" class="btns text-uppercase">Apply job</a>
-                                        </div>
-                                        <div class="single-rated">
-                                            <img class="img-fluid" src="{% static 'img/r1.jpg' %}" alt="">
-                                            <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                            <h6>Premium Labels Limited</h6>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-                                            </p>
-                                            <h5>Job Nature: Full time</h5>
-                                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-                                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-                                            <a href="#" class="btns text-uppercase">Apply job</a>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="job-listing-footer">
+                                <ul>
+                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
+                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
+                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
+                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="job-listing-btns">
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-post d-flex flex-row">
+                        <div class="thumb">
+                            <img src="{% static 'img/o1.png' %}" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title d-flex flex-row justify-content-between">
+                                <div class="titles">
+                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                    <h6>Premium Labels Limited</h6>
                                 </div>
-
-                                <div class="single-slidebar">
-                                    <h4>Carrer Advice Blog</h4>
-                                    <div class="blog-list">
-                                        <div class="single-blog " style="background:#000 url({% static 'img/blog1.jpg' %});">
-                                            <a href="single.html"><h4>Home Audio Recording <br>
-                                            For Everyone</h4></a>
-                                            <div class="meta justify-content-between d-flex">
-                                                <p>
-                                                    02 Hours ago
-                                                </p>
-                                                <p>
-                                                    <span class="lnr lnr-heart"></span>
-                                                    06
-                                                     <span class="lnr lnr-bubble"></span>
-                                                    02
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="single-blog " style="background:#000 url({% static 'img/blog2.jpg' %});">
-                                            <a href="single.html"><h4>Home Audio Recording <br>
-                                            For Everyone</h4></a>
-                                            <div class="meta justify-content-between d-flex">
-                                                <p>
-                                                    02 Hours ago
-                                                </p>
-                                                <p>
-                                                    <span class="lnr lnr-heart"></span>
-                                                    06
-                                                     <span class="lnr lnr-bubble"></span>
-                                                    02
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="single-blog " style="background:#000 url({% static 'img/blog1.jpg' %});">
-                                            <a href="single.html"><h4>Home Audio Recording <br>
-                                            For Everyone</h4></a>
-                                            <div class="meta justify-content-between d-flex">
-                                                <p>
-                                                    02 Hours ago
-                                                </p>
-                                                <p>
-                                                    <span class="lnr lnr-heart"></span>
-                                                    06
-                                                     <span class="lnr lnr-bubble"></span>
-                                                    02
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="job-listing-footer">
+                                <ul>
+                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
+                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
+                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
+                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="job-listing-btns">
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-post d-flex flex-row">
+                        <div class="thumb">
+                            <img src="{% static 'img/o1.png' %}" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title d-flex flex-row justify-content-between">
+                                <div class="titles">
+                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                    <h6>Premium Labels Limited</h6>
                                 </div>
-
+                            </div>
+                            <div class="job-listing-footer">
+                                <ul>
+                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
+                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
+                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
+                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="job-listing-btns">
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-post d-flex flex-row">
+                        <div class="thumb">
+                            <img src="{% static 'img/o1.png' %}" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title d-flex flex-row justify-content-between">
+                                <div class="titles">
+                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                    <h6>Premium Labels Limited</h6>
+                                </div>
+                            </div>
+                            <div class="job-listing-footer">
+                                <ul>
+                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
+                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
+                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
+                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="job-listing-btns">
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single-post d-flex flex-row">
+                        <div class="thumb">
+                            <img src="{% static 'img/o1.png' %}" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title d-flex flex-row justify-content-between">
+                                <div class="titles">
+                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                    <h6>Premium Labels Limited</h6>
+                                </div>
+                            </div>
+                            <div class="job-listing-footer">
+                                <ul>
+                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
+                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
+                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
+                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="job-listing-btns">
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
+                </div>
+                <div class="col-lg-4 sidebar">
+                    <div class="single-slidebar">
+                        <h4>Jobs by Location</h4>
+                        <ul class="cat-list">
+                            <li><a class="justify-content-between d-flex" href="category.html"><p>New York</p><span>37</span></a></li>
+                            <li><a class="justify-content-between d-flex" href="category.html"><p>Park Montana</p><span>57</span></a></li>
+                            <li><a class="justify-content-between d-flex" href="category.html"><p>Atlanta</p><span>33</span></a></li>
+                            <li><a class="justify-content-between d-flex" href="category.html"><p>Arizona</p><span>36</span></a></li>
+                            <li><a class="justify-content-between d-flex" href="category.html"><p>Florida</p><span>47</span></a></li>
+                            <li><a class="justify-content-between d-flex" href="category.html"><p>Rocky Beach</p><span>27</span></a></li>
+                            <li><a class="justify-content-between d-flex" href="category.html"><p>Chicago</p><span>17</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="single-slidebar">
+                        <h4>Top rated job posts</h4>
+                        <div class="active-relatedjob-carusel">
+                            <div class="single-rated">
+                                <img class="img-fluid" src="{% static 'img/r1.jpg' %}" alt="">
+                                <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                <h6>Premium Labels Limited</h6>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                </p>
+                                <h5>Job Nature: Full time</h5>
+                                <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                <a href="#" class="btns text-uppercase">Apply job</a>
+                            </div>
+                            <div class="single-rated">
+                                <img class="img-fluid" src="{% static 'img/r1.jpg' %}" alt="">
+                                <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                <h6>Premium Labels Limited</h6>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                </p>
+                                <h5>Job Nature: Full time</h5>
+                                <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                <a href="#" class="btns text-uppercase">Apply job</a>
+                            </div>
+                            <div class="single-rated">
+                                <img class="img-fluid" src="{% static 'img/r1.jpg' %}" alt="">
+                                <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                <h6>Premium Labels Limited</h6>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                </p>
+                                <h5>Job Nature: Full time</h5>
+                                <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                <a href="#" class="btns text-uppercase">Apply job</a>
                             </div>
                         </div>
                     </div>
-                </section>
+                    <div class="single-slidebar">
+                        <h4>Carrer Advice Blog</h4>
+                        <div class="blog-list">
+                            <div class="single-blog " style="background:#000 url({% static 'img/blog1.jpg' %});">
+                                <a href="single.html"><h4>Home Audio Recording <br>
+                                    For Everyone</h4></a>
+                                <div class="meta justify-content-between d-flex">
+                                    <p>
+                                        02 Hours ago
+                                    </p>
+                                    <p>
+                                        <span class="lnr lnr-heart"></span>
+                                        06
+                                        <span class="lnr lnr-bubble"></span>
+                                        02
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="single-blog " style="background:#000 url({% static 'img/blog2.jpg' %});">
+                                <a href="single.html"><h4>Home Audio Recording <br>
+                                    For Everyone</h4></a>
+                                <div class="meta justify-content-between d-flex">
+                                    <p>
+                                        02 Hours ago
+                                    </p>
+                                    <p>
+                                        <span class="lnr lnr-heart"></span>
+                                        06
+                                        <span class="lnr lnr-bubble"></span>
+                                        02
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="single-blog " style="background:#000 url({% static 'img/blog1.jpg' %});">
+                                <a href="single.html"><h4>Home Audio Recording <br>
+                                    For Everyone</h4></a>
+                                <div class="meta justify-content-between d-flex">
+                                    <p>
+                                        02 Hours ago
+                                    </p>
+                                    <p>
+                                        <span class="lnr lnr-heart"></span>
+                                        06
+                                        <span class="lnr lnr-bubble"></span>
+                                        02
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- End post Area -->
 
     <!-- Start Cities Area -->
     <section class="featured-cities-area section-full" id="Cities">
-                    <div class="container">
-                        <div class="row d-flex justify-content-center">
-                            <div class="menu-content pb-60 col-lg-10">
-                                <div class="title text-center">
-                                    <h1 class="mb-10">Featured Cities</h1>
-                                    <p>Who are in extremely love with eco friendly system.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 col-sm-12">
-                                <a href="" class="photo-box" data-background-image="{% static 'img/featured-city-01.jpeg' %}" style="background-image: url({% static 'img/featured-city-01.jpeg' %});">
-                                    <div class="photo-box-content">
-                                        <h3>San Francisco</h3>
-                                        <span>376 Jobs</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-12">
-                                <a href="" class="photo-box" data-background-image="{% static 'img/featured-city-02.jpeg' %}" style="background-image: url({% static 'img/featured-city-02.jpeg' %});">
-                                    <div class="photo-box-content">
-                                        <h3>Los Angles</h3>
-                                        <span>1076 Jobs</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-12">
-                                <a href="" class="photo-box" data-background-image="{% static 'img/featured-city-03.jpeg' %}" style="background-image: url({% static 'img/featured-city-03.jpeg' %});">
-                                    <div class="photo-box-content">
-                                        <h3>Dubai</h3>
-                                        <span>976 Jobs</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-12">
-                                <a href="" class="photo-box" data-background-image="{% static 'img/featured-city-04.jpeg' %}" style="background-image: url({% static 'img/featured-city-04.jpeg' %});">
-                                    <div class="photo-box-content">
-                                        <h3>London</h3>
-                                        <span>650 Jobs</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-60 col-lg-10">
+                    <div class="title text-center">
+                        <h1 class="mb-10">Featured Cities</h1>
+                        <p>Who are in extremely love with eco friendly system.</p>
                     </div>
-                </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <a href="" class="photo-box" data-background-image="{% static 'img/featured-city-01.jpeg' %}" style="background-image: url({% static 'img/featured-city-01.jpeg' %});">
+                        <div class="photo-box-content">
+                            <h3>San Francisco</h3>
+                            <span>376 Jobs</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <a href="" class="photo-box" data-background-image="{% static 'img/featured-city-02.jpeg' %}" style="background-image: url({% static 'img/featured-city-02.jpeg' %});">
+                        <div class="photo-box-content">
+                            <h3>Los Angles</h3>
+                            <span>1076 Jobs</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <a href="" class="photo-box" data-background-image="{% static 'img/featured-city-03.jpeg' %}" style="background-image: url({% static 'img/featured-city-03.jpeg' %});">
+                        <div class="photo-box-content">
+                            <h3>Dubai</h3>
+                            <span>976 Jobs</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <a href="" class="photo-box" data-background-image="{% static 'img/featured-city-04.jpeg' %}" style="background-image: url({% static 'img/featured-city-04.jpeg' %});">
+                        <div class="photo-box-content">
+                            <h3>London</h3>
+                            <span>650 Jobs</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- End cities Area -->
 
     <!-- Start callto-action Area -->

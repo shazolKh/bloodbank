@@ -6,8 +6,8 @@ from . import views
 
 urlpatterns = [
     path('settings/<username>', views.userProfile, name='profile'),
-    path('profile/<id>', views.userSettings, name='settings'),
-    path('edit_profile/<id>', views.editProfile, name='edit')
+    path('profile/<str:pk>', views.userSettings, name='settings'),
+    path('edit_profile/<str:pk>', views.editProfile, name='edit')
 ]
 
 if settings.DEBUG:
