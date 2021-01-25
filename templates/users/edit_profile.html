@@ -11,16 +11,19 @@
                     <figure>
                         <img src="{{ profile.dp.url }}" style="width: 140px; height: 140px;" alt="">
                         <figcaption>
+                            <div class="careerfy-fileUpload">
+                                <span class="clr_b"><i class="fa fa-plus careerfy-add"></i> Update Photo</span>
+                                <input type="file" class="careerfy-upload">
+                            </div>
                             <h2>{{ request.user.first_name }} {{ request.user.last_name }}</h2>
                         </figcaption>
                     </figure>
                 </div>
             </div>
             <div class="col-lg-8 post-list">
+                <form method="post">
+                    {% csrf_token %}
                     <div class="profile_job_content col-lg-12">
-                    {% for message in messages %}
-                        <p class="text-center">{{ message }}</p>
-                    {% endfor %}
                     <div class="headline">
                         <h3> Basic Information</h3>
                     </div>
@@ -29,51 +32,50 @@
                             <div class="col-md-6 col-sm-12">
                                 <div class="submit-field">
                                     <h5>Age</h5>
-                                    <label class="form-control" >{{ profile.age }}</label>
+                                    <input class="form-control" name="age" type="text" placeholder="{{ profile.age }}">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <div class="submit-field">
                                     <h5>Blood Group</h5>
-                                    <label class="form-control" >{{ profile.blood_group }}</label>
+                                    <input class="form-control" name="blood" type="email" placeholder="{{ profile.blood_group }}">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <div class="submit-field">
-                                    <h5>Weight(Kg)</h5>
-                                    <label class="form-control" >{{ profile.weight }}</label>
+                                    <h5>Weight</h5>
+                                    <input class="form-control" type="text" name="weight" placeholder="{{ profile.weight }}">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <div class="submit-field">
                                     <h5>Gender</h5>
-                                    <label class="form-control" >{{ profile.gender }}</label>
+                                    <input class="form-control" name="gender" type="tel" placeholder="{{ profile.gender }}">
+
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <div class="submit-field">
                                     <h5>Mobile</h5>
-                                    <label class="form-control" >{{ profile.mobile }}</label>
+                                    <input class="form-control" name="mobile" type="tel" placeholder="{{ profile.mobile }}">
                                 </div>
                             </div>
-                            {% if profile.mobile2 is not Null %}
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="submit-field">
-                                        <h5>Secondary Mobile</h5>
-                                        <label class="form-control" >{{ profile.mobile2 }}</label>
-                                    </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="submit-field">
+                                    <h5>Secondary Mobile</h5>
+                                    <input class="form-control" name="mobile2" type="tel" placeholder="{{ profile.mobile2 }}">
                                 </div>
-                            {% endif %}
+                            </div>
                              <div class="col-md-12 col-sm-12">
                                 <div class="submit-field">
                                     <h5>Address</h5>
-                                    <label class="form-control" id="exampleFormControlTextarea1">{{ profile.address }}</label>
+                                    <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="5" placeholder="{{ profile.address }}"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <div class="submit-field">
                                     <h5>Any Disease?</h5>
-                                    <label class="form-control" id="exampleFormControlTextarea1">{{ profile.disease }}</label>
+                                    <textarea class="form-control" name="dis" id="exampleFormControlTextarea1" rows="5" placeholder="{{ profile.disease }}"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -81,9 +83,10 @@
                     </div>
                         <div class="add_job_btn col-lg-12 mt-5">
                         <div class="submit-field">
-                            <a href="{% url 'edit' request.user.id %}" class="job_detail_btn">Edit Profile</a>
+                            <button type="submit" class="job_detail_btn">Submit</button>
                         </div>
                     </div>
+                </form>
             </div>
         </div>
     </div>

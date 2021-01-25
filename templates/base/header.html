@@ -58,7 +58,7 @@
                     {% if request.user.is_authenticated %}
                         <li class="menu-has-children" style="margin-left: 300px;"><a href="#">{{ request.user.first_name }}</a>
                             <ul>
-                                <li><a href="{% url 'settings' request.user %}">Profile</a></li>
+                                <li><a href="{% url 'settings' request.user.id %}">Profile</a></li>
                                 <li><a href="{% url 'profile' request.user.username %}">Settings</a></li>
                             </ul>
                         </li>

@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 
 from .forms import RegForm
 from .models import UserProfile
@@ -18,9 +19,13 @@ def register(request):
             form = RegForm(request.POST)
             if form.is_valid():
                 form.save()
+                user = form.cleaned_data.get('username')
+                passs = form.cleaned_data.get('password1')
+                new_user = authenticate(request, username=user, password=passs)
+                login(request, new_user)
                 # user = form.cleaned_data.get('username')
-                messages.success(request, 'Please Sign in to continue!!')
-                return redirect('login')
+                messages.success(request, 'Please enter your details!!')
+                return redirect('profile', user)
         context = {'form': form}
         return render(request, 'users/register.html', context)
 
@@ -57,24 +62,36 @@ def userProfile(request, username):
         age = request.POST.get('age')
         blood = request.POST.get('blood')
         gender = request.POST.get('gender')
+        weight = request.POST.get('weight')
         mobile = request.POST.get('mobile')
         mobile2 = request.POST.get('mobile2')
         address = request.POST.get('address')
         dis = request.POST.get('dis')
 
         profile = UserProfile(user=name, age=age, blood_group=blood, gender=gender, mobile=mobile, mobile2=mobile2,
-                              address=address, disease=dis)
+                              address=address, disease=dis, weight=weight)
         profile.save()
         messages.success(request, 'Your Profile Information is Updated!!!')
-        return redirect('settings')
+        return redirect('settings', request.user.id)
 
     return render(request, 'users/settings.html')
 
 
-def userSettings(request, user):
-    profile_info = UserProfile.objects.get(user=user)
+@login_required(login_url='login')
+def userSettings(request, id):
+    profile_info = UserProfile.objects.get(user=id)
 
     context = {
         'profile': profile_info
     }
     return render(request, 'users/profile.html', context)
+
+
+@login_required(login_url='login')
+def editProfile(request, id):
+    profile_info = UserProfile.objects.get(user=id)
+
+    context = {
+        'profile': profile_info
+    }
+    return render(request, 'users/edit_profile.html', context)
