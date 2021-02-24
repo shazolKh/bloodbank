@@ -1,0 +1,26 @@
+ <div class="js_frm_signup js_frm_signup_right js_frm_signup_white" style="margin-top: 0px;">
+     <h3 class="text-white">
+         Post for <span style="color: red;">Blood</span>
+     </h3>
+     <form action="" method="post">
+         {% csrf_token %}
+         <div class="form-group" data-animation="animated fadeInLeft">
+             <input type="text" name="blood" class="form-control" placeholder="Blood Group" required>
+         </div>
+         <div class="form-group" data-animation="animated fadeInRight">
+             <input type="text" name="location" class="form-control" placeholder="Location" required>
+         </div>
+         <div class="form-group" data-animation="animated fadeInLeft">
+             <input type="text" name="hospital" class="form-control" placeholder="Hospital" required>
+         </div>
+         <div class="form-group" data-animation="animated fadeInRight">
+             <input type="text" name="contact" class="form-control" placeholder="Contact" required>
+         </div>
+         <div class="form-group" data-animation="animated fadeInLeft">
+             <textarea class="form-control" name="details" placeholder="Details" rows="3"></textarea>
+         </div>
+         <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
+             Post
+         </button>
+     </form>
+ </div>

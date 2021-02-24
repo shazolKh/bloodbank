@@ -3,13 +3,18 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
+from django.core import serializers
+
 
 from .forms import RegForm, UserProfileForm
 from .models import UserProfile
 
 
 # Create your views here.
+
+
+
 def register(request):
     if request.user.is_authenticated:
         return redirect('home')
@@ -56,7 +61,6 @@ def logout_user(request):
 
 @login_required(login_url='login')
 def userProfile(request, username):
-
     if request.method == 'POST':
         name = User.objects.get(username=username)
         age = request.POST.get('age')

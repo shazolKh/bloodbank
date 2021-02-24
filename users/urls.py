@@ -12,3 +12,7 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# shazol_kh 123password987
+# shazol_1 123password987

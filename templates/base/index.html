@@ -2,170 +2,42 @@
 {% load static %}
 {% block title %}<title>Blood Bank</title>{% endblock %}
 {% block content %}
-    <div id="js_frm_031" class="carousel slide ps_control_xlongicon swipe_x ps_easeOutInCubic" data-ride="carousel" data-pause="hover" data-interval="4000" data-duration="2000">
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <img src="{% static 'img/slider1.jpeg' %}" alt="slider_img" />
-                {% if request.user.is_authenticated %}
-                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
-                        <h3 data-animation="animated fadeInLeft">Blood For Life</h3>
-                        <div class="form-group" data-animation="animated fadeInRight">
-                            <label class="form-control">This is our Community</label>
-                        </div>
-                        <div class="form-group" data-animation="animated fadeInLeft">
-                            <label class="form-control">This is our Community Second</label>
-                        </div>
-                        <div class="form-group" data-animation="animated fadeInLeft">
-                            <label class="form-control">This is our Community thoaihwdl</label>
-                        </div>
-                        <div class="form-group" data-animation="animated fadeInRight">
-                            <label class="form-control">This is our Community thoaihwdl</label>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
-                        <h3 data-animation="animated fadeInLeft">signup</h3>
-                        <form action="#">
-                            <div class="form-group" data-animation="animated fadeInRight">
-                                <input type="text" class="form-control" placeholder="first name" required>
-                            </div>
-                            <div class="form-group" data-animation="animated fadeInLeft">
-                                <input type="text" class="form-control" placeholder="last name" required>
-                            </div>
-                            <div class="form-group" data-animation="animated fadeInLeft">
-                                <input type="password" class="form-control" placeholder="password" required>
-                            </div>
-                            <div class="form-group" data-animation="animated fadeInRight">
-                                <input type="email" class="form-control" placeholder="email" required>
-                            </div>
-                            <div class="checkbox" data-animation="animated fadeInLeft">
-                                <div>
-                                    <input type="checkbox" value="" required>
-                                    <span></span>
-                                </div>
-                                <label>I agree to the <a href="#" >terms and conditions</a></label>
-                            </div>
-                            <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
-                                create account
-                            </button>
-                        </form>
-                    </div>
-                {% endif %}
+    {% if request.user.is_authenticated %}
+        <div id="js_frm_031" class="carousel slide ps_control_xlongicon swipe_x ps_easeOutInCubic" data-ride="carousel" data-pause="hover" data-interval="4000" data-duration="2000">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img src="{% static 'img/slider1.jpeg' %}" alt="slider_img" />
+                    {% include 'base/logged_in.html' %}
+                </div>
             </div>
-            <div class="carousel-item">
-                <!-- Slide Background -->
-                <img src="{% static 'img/slider_3.jpg' %}" alt="slider_img" />
-                <!-- Form -->
-                {% if request.user.is_authenticated %}
-                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
-                        <h3 data-animation="animated fadeInLeft">Blood For Life</h3>
-                        <div class="form-group" data-animation="animated fadeInRight">
-                            <label class="form-control">This is our Community</label>
-                        </div>
-                        <div class="form-group" data-animation="animated fadeInLeft">
-                            <label class="form-control">This is our Community Second</label>
-                        </div>
-                        <div class="form-group" data-animation="animated fadeInLeft">
-                            <label class="form-control">This is our Community thoaihwdl</label>
-                        </div>
-                        <div class="form-group" data-animation="animated fadeInRight">
-                            <label class="form-control">This is our Community thoaihwdl</label>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
-                        <h3 data-animation="animated fadeInLeft">signup</h3>
-                        <form action="#">
-                            <div class="form-group" data-animation="animated fadeInRight">
-                                <input type="text" class="form-control" placeholder="first name" required>
-                            </div>
-                            <div class="form-group" data-animation="animated fadeInLeft">
-                                <input type="text" class="form-control" placeholder="last name" required>
-                            </div>
-                            <div class="form-group" data-animation="animated fadeInLeft">
-                                <input type="password" class="form-control" placeholder="password" required>
-                            </div>
-                            <div class="form-group" data-animation="animated fadeInRight">
-                                <input type="email" class="form-control" placeholder="email" required>
-                            </div>
-                            <div class="checkbox" data-animation="animated fadeInLeft">
-                                <div>
-                                    <input type="checkbox" value="" required>
-                                    <span></span>
-                                </div>
-                                <label>I agree to the <a href="#" >terms and conditions</a></label>
-                            </div>
-                            <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
-                                create account
-                            </button>
-                        </form>
-                    </div>
-                {% endif %}
-            </div>
-            <!-- End of Slide -->
-            <!-- Third Slide -->
-            <div class="carousel-item">
-                <!-- Slide Background -->
-                <img src="{% static 'img/slider2.jpeg' %}" alt="slider_img" />
-                <!-- Form -->
-                {% if request.user.is_authenticated %}
-                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
-                        <h3 data-animation="animated fadeInLeft">Blood For Life</h3>
-                        <div class="form-group" data-animation="animated fadeInRight">
-                            <label class="form-control">This is our Community</label>
-                        </div>
-                        <div class="form-group" data-animation="animated fadeInLeft">
-                            <label class="form-control">This is our Community Second</label>
-                        </div>
-                        <div class="form-group" data-animation="animated fadeInLeft">
-                            <label class="form-control">This is our Community thoaihwdl</label>
-                        </div>
-                        <div class="form-group" data-animation="animated fadeInRight">
-                            <label class="form-control">This is our Community thoaihwdl</label>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class="js_frm_signup js_frm_signup_right js_frm_signup_white">
-                        <h3 data-animation="animated fadeInLeft">signup</h3>
-                        <form action="#">
-                            <div class="form-group" data-animation="animated fadeInRight">
-                                <input type="text" class="form-control" placeholder="first name" required>
-                            </div>
-                            <div class="form-group" data-animation="animated fadeInLeft">
-                                <input type="text" class="form-control" placeholder="last name" required>
-                            </div>
-                            <div class="form-group" data-animation="animated fadeInLeft">
-                                <input type="password" class="form-control" placeholder="password" required>
-                            </div>
-                            <div class="form-group" data-animation="animated fadeInRight">
-                                <input type="email" class="form-control" placeholder="email" required>
-                            </div>
-                            <div class="checkbox" data-animation="animated fadeInLeft">
-                                <div>
-                                    <input type="checkbox" value="" required>
-                                    <span></span>
-                                </div>
-                                <label>I agree to the <a href="#" >terms and conditions</a></label>
-                            </div>
-                            <button type="submit" class="btn btn-default" data-animation="animated fadeInRight">
-                                create account
-                            </button>
-                        </form>
-                    </div>
-                {% endif %}
-            </div>
-            <!-- End of Slide -->
         </div>
-        <!-- End of Wrapper For Slides -->
-        <!-- Left Control -->
-        <a class="carousel-control-prev" href="#js_frm_031" role="button" data-slide="prev">
-            <span class="fa fa-long-arrow-left" aria-hidden="true"></span>
-        </a>
-        <!-- Right Control -->
-        <a class="carousel-control-next" href="#js_frm_031" role="button" data-slide="next">
-            <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
-        </a>
-    </div>
+    {% else %}
+        <div id="js_frm_031" class="carousel slide ps_control_xlongicon swipe_x ps_easeOutInCubic" data-ride="carousel" data-pause="hover" data-interval="4000" data-duration="2000">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img src="{% static 'img/slider1.jpeg' %}" alt="slider_img" />
+                    {% include 'base/index_login.html' %}
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/slider_3.jpg' %}" alt="slider_img" />
+                    {% include 'base/index_login.html' %}
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/slider2.jpeg' %}" alt="slider_img" />
+                    {% include 'base/index_login.html' %}
+                </div>
+            </div>
+            <!-- End of Wrapper For Slides -->
+            <!-- Left Control -->
+            <a class="carousel-control-prev" href="#js_frm_031" role="button" data-slide="prev">
+                <span class="fa fa-long-arrow-left" aria-hidden="true"></span>
+            </a>
+            <!-- Right Control -->
+            <a class="carousel-control-next" href="#js_frm_031" role="button" data-slide="next">
+                <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+            </a>
+        </div>
+    {% endif %}
     <!-- End Paradise Slider -->
 
     <!-- Start feature-cat Area -->
@@ -246,240 +118,51 @@
             </div>
             <div class="row justify-content-center d-flex">
                 <div class="col-lg-8 post-list">
-                    <ul class="cat-list">
-                        <li><a href="#">Recent</a></li>
-                        <li><a href="#">Full Time</a></li>
-                        <li><a href="#">Intern</a></li>
-                        <li><a href="#">part Time</a></li>
-                    </ul>
-                    <div class="single-post d-flex flex-row">
+                    {% for post in  posts%}
+                        <div class="single-post d-flex flex-row">
                         <div class="thumb">
                             <img src="{% static 'img/o1.png' %}" alt="">
                         </div>
                         <div class="details">
                             <div class="title d-flex flex-row justify-content-between">
                                 <div class="titles">
-                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                    <h6>Premium Labels Limited</h6>
+                                    <h4><span style="color: red">{{ post.blood_group }}</span> Blood Needed at <span style="color: orange">{{ post.hospital }}</span></h4>
+                                    <h6>{{ post.details }}</h6>
                                 </div>
                             </div>
                             <div class="job-listing-footer">
                                 <ul>
-                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                </ul>									</div>
-                        </div>
-                        <div class="job-listing-btns">
-                            <ul class="btns">
-                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                <li><a href="#">Apply</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-post d-flex flex-row">
-                        <div class="thumb">
-                            <img src="{% static 'img/o1.png' %}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="title d-flex flex-row justify-content-between">
-                                <div class="titles">
-                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                    <h6>Premium Labels Limited</h6>
-                                </div>
-                            </div>
-                            <div class="job-listing-footer">
-                                <ul>
-                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
+                                    <li><i class="lnr lnr-map-marker"></i> {{ post.location }}</li>
+                                    <li><i class="lnr lnr-phone-handset"></i> {{ post.contact }}</li>
+                                    <li><i class="lnr lnr-pencil"></i> {{ post.user }}</li>
+                                    <li><i class="lnr lnr-calendar-full"></i> {{ post.date }}</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="job-listing-btns">
+                        {% comment %}<div class="job-listing-btns">
                             <ul class="btns">
                                 <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
                                 <li><a href="#">Apply</a></li>
                             </ul>
-                        </div>
+                        </div>{% endcomment %}
                     </div>
-                    <div class="single-post d-flex flex-row">
-                        <div class="thumb">
-                            <img src="{% static 'img/o1.png' %}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="title d-flex flex-row justify-content-between">
-                                <div class="titles">
-                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                    <h6>Premium Labels Limited</h6>
-                                </div>
-                            </div>
-                            <div class="job-listing-footer">
-                                <ul>
-                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="job-listing-btns">
-                            <ul class="btns">
-                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                <li><a href="#">Apply</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-post d-flex flex-row">
-                        <div class="thumb">
-                            <img src="{% static 'img/o1.png' %}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="title d-flex flex-row justify-content-between">
-                                <div class="titles">
-                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                    <h6>Premium Labels Limited</h6>
-                                </div>
-                            </div>
-                            <div class="job-listing-footer">
-                                <ul>
-                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="job-listing-btns">
-                            <ul class="btns">
-                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                <li><a href="#">Apply</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-post d-flex flex-row">
-                        <div class="thumb">
-                            <img src="{% static 'img/o1.png' %}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="title d-flex flex-row justify-content-between">
-                                <div class="titles">
-                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                    <h6>Premium Labels Limited</h6>
-                                </div>
-                            </div>
-                            <div class="job-listing-footer">
-                                <ul>
-                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="job-listing-btns">
-                            <ul class="btns">
-                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                <li><a href="#">Apply</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-post d-flex flex-row">
-                        <div class="thumb">
-                            <img src="{% static 'img/o1.png' %}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="title d-flex flex-row justify-content-between">
-                                <div class="titles">
-                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                    <h6>Premium Labels Limited</h6>
-                                </div>
-                            </div>
-                            <div class="job-listing-footer">
-                                <ul>
-                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="job-listing-btns">
-                            <ul class="btns">
-                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                <li><a href="#">Apply</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-post d-flex flex-row">
-                        <div class="thumb">
-                            <img src="{% static 'img/o1.png' %}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="title d-flex flex-row justify-content-between">
-                                <div class="titles">
-                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                    <h6>Premium Labels Limited</h6>
-                                </div>
-                            </div>
-                            <div class="job-listing-footer">
-                                <ul>
-                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="job-listing-btns">
-                            <ul class="btns">
-                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                <li><a href="#">Apply</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="single-post d-flex flex-row">
-                        <div class="thumb">
-                            <img src="{% static 'img/o1.png' %}" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="title d-flex flex-row justify-content-between">
-                                <div class="titles">
-                                    <a href="single.html"><h4>Creative Art Designer</h4></a>
-                                    <h6>Premium Labels Limited</h6>
-                                </div>
-                            </div>
-                            <div class="job-listing-footer">
-                                <ul>
-                                    <li><i class="lnr lnr-map-marker"></i> London, England</li>
-                                    <li><i class="lnr lnr-briefcase"></i> Full Time</li>
-                                    <li><i class="lnr lnr-apartment"></i> Marketing</li>
-                                    <li><i class="lnr lnr-clock"></i> 2 days ago</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="job-listing-btns">
-                            <ul class="btns">
-                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                <li><a href="#">Apply</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    {% endfor %}
                     <a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
                 </div>
                 <div class="col-lg-4 sidebar">
                     <div class="single-slidebar">
-                        <h4>Jobs by Location</h4>
+                        <h4>Blood Donor Statistics</h4>
                         <ul class="cat-list">
-                            <li><a class="justify-content-between d-flex" href="category.html"><p>New York</p><span>37</span></a></li>
-                            <li><a class="justify-content-between d-flex" href="category.html"><p>Park Montana</p><span>57</span></a></li>
-                            <li><a class="justify-content-between d-flex" href="category.html"><p>Atlanta</p><span>33</span></a></li>
-                            <li><a class="justify-content-between d-flex" href="category.html"><p>Arizona</p><span>36</span></a></li>
-                            <li><a class="justify-content-between d-flex" href="category.html"><p>Florida</p><span>47</span></a></li>
-                            <li><a class="justify-content-between d-flex" href="category.html"><p>Rocky Beach</p><span>27</span></a></li>
-                            <li><a class="justify-content-between d-flex" href="category.html"><p>Chicago</p><span>17</span></a></li>
+                        {% for n in info %}
+                            <li>
+                                <a class="justify-content-between d-flex" href="category.html">
+                                    <p>{{ n }}</p>
+                                    <span>
+                                        
+                                    </span>
+                                </a>
+                            </li>
+                        {% endfor %}
                         </ul>
                     </div>
                     <div class="single-slidebar">
