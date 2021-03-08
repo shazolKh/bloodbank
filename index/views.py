@@ -1,13 +1,7 @@
 from django.shortcuts import render, redirect
-# from django.views.generic import TemplateView, ListView
 from users.models import UserProfile
-from django.contrib.auth.decorators import login_required
-# from .models import Post
-from django.http import JsonResponse, HttpResponse
-from django.core import serializers
 from collections import Counter
-from django.contrib.auth.models import User
-from django.contrib import messages
+from django.core.paginator import Paginator
 from .models import Post
 
 
@@ -24,8 +18,6 @@ def Index(request):
     aoo = []
     for i in range(len(n)):
         aoo.append(list(n.values())[i])
-
-    # print(n)
 
     if request.method == 'POST':
         data = request.POST
@@ -46,15 +38,29 @@ def Index(request):
         # return JsonResponse(context, safe=False)
         return redirect('home')
 
-    all_posts = Post.objects.all()
+    all_posts = Post.objects.all().order_by('-id')
+    paginator = Paginator(all_posts, 8)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
     context = {
         'uniq_address': num_uniq_address,
         'info': n,
         'add_list': aoo,
-
-        'posts': all_posts
+        'page_obj': page_obj,
     }
 
     # return JsonResponse(context, safe=False)
     return render(request, 'base/index.html', context)
+
+
+def Managed(request, pk):
+    if request.method == 'POST':
+        managed = request.POST.get('managed')
+        Post.objects.filter(id=pk).update(managed=managed)
+        return redirect('home')
+
+
+def Write_Blog(request):
+    return render(request, 'blog/write_post.html')

@@ -11,33 +11,23 @@
                     <li class="menu-active menu-has-children">
                         <a href="{% url 'home' %}">Home</a>
                     </li>
-                    <li class="menu-has-children"><a href="">For Canidates</a>
+                    <li class="menu-has-children"><a href="">Blog</a>
                         <ul>
-                            <li><a href="canidate_applied_jobs.html">Applied Jobs</a></li>
-                            <li><a href="canidate_job_alerts.html">Job Alerts</a></li>
-                            <li><a href="canidate_listings.html">Canidate Listings</a></li>
-                            <li><a href="canidate_profile.html">Canidate Profile</a></li>
-                            <li><a href="canidate_resume.html">Canidate Resume</a></li>
-                            <li><a href="canidate_resume_manger.html">Resume Manager</a></li>
-                            <li><a href="canidate_saved_jobs.html">Saved Jobs</a></li>
-                            <li><a href="canidate_change_password.html">Change Password</a></li>
+                            {% if request.user.is_authenticated %}
+                                <li><a href="{% url 'write_blog' %}">Creat a Post</a></li>
+                            {% endif %}
+                            <li><a href="canidate_job_alerts.html">All Posts</a></li>
                         </ul>
                     </li>
-                    <li class="menu-has-children"><a href="">For Employers</a>
+                    <li class="menu-has-children"><a href="">Testimonial</a>
                         <ul>
-                            <li><a href="employer_profile.html">Employer Profile</a></li>
-                            <li><a href="employer_list.html">Employer List</a></li>
-                            <li><a href="employer_list_detail.html">Employer List Detail</a></li>
-                            <li><a href="employer_manage_jobs.html">Manage Jobs</a></li>
-                            <li><a href="employer_shortlist_resume.html">Shortlist Resume</a></li>
-                            <li><a href="employer_packages.html">Packages</a></li>
-                            <li><a href="employer_transactions.html">Transactions</a></li>
-                            <li><a href="employer_post_job.html">Post a job</a></li>
-                            <li><a href="employer_job_alerts.html">Job Alerts</a></li>
-                            <li><a href="employer_change_password.html">Change Password</a></li>
+                            {% if request.user.is_authenticated %}
+                                <li><a href="employer_profile.html">Write</a></li>
+                            {% endif %}
+                            <li><a href="employer_list.html">All Testimonials</a></li>
                         </ul>
                     </li>
-                    <li class="menu-has-children"><a href="">Pages</a>
+                    {% comment %}<li class="menu-has-children"><a href="">Pages</a>
                         <ul>
                             <li><a href="post_a_job.html">Post A Job</a></li>
                             <li><a href="category.html">Job Category</a></li>
@@ -54,15 +44,17 @@
                             <li><a href="signin.html">Signin Page</a></li>
                             <li><a href="signup.html">Signup Page</a></li>
                         </ul>
-                    </li>
+                    </li>{% endcomment %}
                     {% if request.user.is_authenticated %}
-                        <li class="menu-has-children" style="margin-left: 300px;"><a href="#">{{ request.user.first_name }}</a>
-                            <ul>
+                        <li class="menu-has-children margin-left-400" style="margin-left: 500px !important;">
+                            <img src="{% static 'img/o41.png' %}" alt="user_img" />
+                            <a href="#"> {{ request.user.first_name }} </a>
+				          	<ul>
                                 <li><a href="{% url 'settings' request.user.id %}">Profile</a></li>
                                 <li><a href="{% url 'profile' request.user.username %}">Settings</a></li>
-                            </ul>
+						        <li><a href="{% url 'logout' %}">LogOut</a></li>
+				            </ul>
                         </li>
-                        <li><a class="nav_btn mt-1" href="{% url 'logout' %}"><i class="lnr lnr-user pr-1"></i>Logout</a></li>
                         {% else %}
                             <li><a class="ticker-btn-nav btn_login mt-1" href="{% url 'login' %}"><i class="lnr lnr-user pr-1"></i> Login</a></li>
                             <li><a class="nav_btn mt-1" href="{% url 'register' %}"><i class="lnr lnr-briefcase pr-1"></i> Create Account</a> </li>

@@ -118,7 +118,7 @@
             </div>
             <div class="row justify-content-center d-flex">
                 <div class="col-lg-8 post-list">
-                    {% for post in  posts%}
+                    {% for post in  page_obj %}
                         <div class="single-post d-flex flex-row">
                         <div class="thumb">
                             <img src="{% static 'img/o1.png' %}" alt="">
@@ -136,31 +136,55 @@
                                     <li><i class="lnr lnr-phone-handset"></i> {{ post.contact }}</li>
                                     <li><i class="lnr lnr-pencil"></i> {{ post.user }}</li>
                                     <li><i class="lnr lnr-calendar-full"></i> {{ post.date }}</li>
+                                    {% if request.user.is_authenticated %}
+                                        {% if request.user.id == post.user.id %}
+                                            <li>
+                                                {% if post.managed == 'No' %}
+                                                    <form method="post" action="{% url 'managed' post.id %}">
+                                                        {% csrf_token %}
+                                                        <button name="managed" type="submit" value="yes" style="color: orangered;">Click if Managed</button>
+                                                    </form>
+                                                {% else %}
+                                                    <label class="btn-disabled" style="font-weight: bold; color: red;">Found</label>
+                                                {% endif %}
+                                            </li>
+                                        {% endif %}
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
-                        {% comment %}<div class="job-listing-btns">
-                            <ul class="btns">
-                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                <li><a href="#">Apply</a></li>
-                            </ul>
-                        </div>{% endcomment %}
                     </div>
                     {% endfor %}
-                    <a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
+{#                Pagination#}
+                    {% if page_obj.has_previous %}
+                        <div class="pagination">
+                            <label class="text-uppercase loadmore-btn mx-auto d-block">
+                                {% if page_obj.has_previous %}
+                                    <a href="?page=1">first</a>
+                                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                                {% endif %}
+
+                                {% comment %}<span class="current">
+                                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                </span>{% endcomment %}
+
+                                {% if page_obj.has_next %}
+                                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                    <a href="?page={{ page_obj.paginator.num_pages }}">last</a>
+                                {% endif %}
+                            </label>
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="col-lg-4 sidebar">
                     <div class="single-slidebar">
-                        <h4>Blood Donor Statistics</h4>
+                        <h4>Blood Donors From</h4>
                         <ul class="cat-list">
                         {% for n in info %}
                             <li>
-                                <a class="justify-content-between d-flex" href="category.html">
+                                <label class="justify-content-between d-flex" href="category.html">
                                     <p>{{ n }}</p>
-                                    <span>
-                                        
-                                    </span>
-                                </a>
+                                </label>
                             </li>
                         {% endfor %}
                         </ul>

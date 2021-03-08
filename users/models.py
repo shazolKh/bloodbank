@@ -8,7 +8,7 @@ from django.db import models
 def photo_path(instance, filename):
     base_name, file_extension = os.path.splitext(filename)
     chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
-    random_str = ''.join((random.choice(chars)) for x in range(15))
+    random_str = ''.join((random.choice(chars)) for _ in range(15))
     return 'profile/{userid}_{randomstring}{ext}'.format(userid=instance.user.id, basename=base_name,
                                                          randomstring=random_str, ext=file_extension)
 
